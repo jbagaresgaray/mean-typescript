@@ -1,0 +1,219 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "1.0.0",
+        "title": "APP API",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "contact": {
+            "email": "info@example.com"
+        }
+    },
+    "schemes": [
+        "http"
+    ],
+    "tags": [ {
+        "name": "Users",
+        "description": "Service for Managing Users"
+    }],
+    "paths": {
+        "/api/1.0/users": {
+            "get": {
+                "tags": [
+                    "Users"
+                ],
+                "description": "Get all list of Users",
+                "summary": "Returns list of all Users",
+                "responses": {
+                    "400": {
+                        "description": "Bad Request - Request does not have a valid format, all required parameters, etc."
+                    },
+                    "401": {
+                        "description": "Unauthorized Access - No currently valid authorization has been made."
+                    },
+                    "403": {
+                        "description": "Forbidden Access - Access to this service or resource is forbidden with the given authorization."
+                    },
+                    "404": {
+                        "description": "Not Found - Service or resource was not found"
+                    },
+                    "500": {
+                        "description": "System Error - Specific reason is included in the error message"
+                    },
+                    "200": {
+                        "description": "Successful response"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Users"
+                ],
+                "description": "Create User",
+                "summary": "Register or Create User",
+                "parameters": [{
+                    "name": "body",
+                    "in": "body",
+                    "description": "",
+                    "schema": {
+                        "$ref": "#/definitions/createUser"
+                    },
+                    "required": true
+                }],
+                "responses": {
+                    "400": {
+                        "description": "Bad Request - Request does not have a valid format, all required parameters, etc."
+                    },
+                    "401": {
+                        "description": "Unauthorized Access - No currently valid authorization has been made."
+                    },
+                    "403": {
+                        "description": "Forbidden Access - Access to this service or resource is forbidden with the given authorization."
+                    },
+                    "404": {
+                        "description": "Not Found - Service or resource was not found"
+                    },
+                    "500": {
+                        "description": "System Error - Specific reason is included in the error message"
+                    },
+                    "200": {
+                        "description": "Successful response"
+                    }
+                }
+            }
+        },
+        "/api/1.0/users/{user_id}": {
+            "get": {
+                "tags": [
+                    "Users"
+                ],
+                "description": "Get User information",
+                "summary": "Returns information of an User",
+                "parameters": [{
+                    "name": "user_id",
+                    "in": "path",
+                    "description": "ID of User to update",
+                    "required": true,
+                    "type": "integer",
+                    "format": "int64"
+                }],
+                "responses": {
+                    "400": {
+                        "description": "Bad Request - Request does not have a valid format, all required parameters, etc."
+                    },
+                    "401": {
+                        "description": "Unauthorized Access - No currently valid authorization has been made."
+                    },
+                    "403": {
+                        "description": "Forbidden Access - Access to this service or resource is forbidden with the given authorization."
+                    },
+                    "404": {
+                        "description": "Not Found - Service or resource was not found"
+                    },
+                    "500": {
+                        "description": "System Error - Specific reason is included in the error message"
+                    },
+                    "200": {
+                        "description": "Successful response"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Users"
+                ],
+                "description": "Update User Information",
+                "summary": "Update User Information",
+                "parameters": [ {
+                    "name": "user_id",
+                    "in": "path",
+                    "description": "ID of User to update",
+                    "required": true,
+                    "type": "integer",
+                    "format": "int64"
+                },{
+                    "name": "body",
+                    "in": "body",
+                    "description": "",
+                    "schema": {
+                        "$ref": "#/definitions/createUser"
+                    },
+                    "required": true
+                }],
+                "responses": {
+                    "400": {
+                        "description": "Bad Request - Request does not have a valid format, all required parameters, etc."
+                    },
+                    "401": {
+                        "description": "Unauthorized Access - No currently valid authorization has been made."
+                    },
+                    "403": {
+                        "description": "Forbidden Access - Access to this service or resource is forbidden with the given authorization."
+                    },
+                    "404": {
+                        "description": "Not Found - Service or resource was not found"
+                    },
+                    "500": {
+                        "description": "System Error - Specific reason is included in the error message"
+                    },
+                    "200": {
+                        "description": "Successful response"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Users"
+                ],
+                "description": "Delete User Information",
+                "summary": "Delete User By Id",
+                "parameters": [{
+                    "name": "user_id",
+                    "in": "path",
+                    "description": "",
+                    "required": true,
+                    "type": "integer",
+                    "format": "int64"
+                }],
+                "description": "",
+                "responses": {
+                    "400": {
+                        "description": "Bad Request - Request does not have a valid format, all required parameters, etc."
+                    },
+                    "401": {
+                        "description": "Unauthorized Access - No currently valid authorization has been made."
+                    },
+                    "403": {
+                        "description": "Forbidden Access - Access to this service or resource is forbidden with the given authorization."
+                    },
+                    "404": {
+                        "description": "Not Found - Service or resource was not found"
+                    },
+                    "500": {
+                        "description": "System Error - Specific reason is included in the error message"
+                    },
+                    "200": {
+                        "description": "Successful response"
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "createUser": {
+            "properties": {
+                "firstname": {
+                    "type": "string"
+                },
+                "lastname": {
+                    "type": "string"
+                },
+                "username": {
+                    "type": "string"
+                },
+                "password": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}
