@@ -1,15 +1,9 @@
 "use strict";
 
-process.env.TZ = "UTC";
-const env = process.env.NODE_ENV || "development";
-
-import envs from "./config/env";
 import * as dotenv from "dotenv";
-
 // ENVIRONMENTS
-envs();
-process.env.NODE_ENV = env;
 dotenv.config();
+
 // LIBRARIES
 import * as bunyan from "bunyan";
 import * as express from "express";

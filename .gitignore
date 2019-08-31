@@ -66,3 +66,4 @@ typings/
 .env
 
 dist
+build
