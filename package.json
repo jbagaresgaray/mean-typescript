@@ -24,7 +24,7 @@
     "copy-static-assets": "node config/config.js"
   },
   "dependencies": {
-    "async": "^2.6.2",
+    "async": "^3.2.2",
     "body-parser": "^1.19.0",
     "bunyan": "^1.8.12",
     "compression": "^1.7.4",
